@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&family=Open+Sans:wght@300&family=Quicksand:wght@600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+
+    --background-color: #222831;
+    --pinpoint-color: #eeeeee;
+    --hours-hands-color: #393e46;
+    --minutes-hands-color: #393e46;
+    --seconds-hands-color: #eeeeee;
+    --marks-color: #222831;
+    --border-color: #393e46;
+    --clock-background-color: #00adb5;
+    --display-text-color: #eeeeee;
+
+    /* https://colorhunt.co/palette/2763 */
+
+    --header-font-size: 3.5rem;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    /* overflow: hidden; */
+    background-color: var(--background-color);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+header{
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+}
+
+h1{
+    color: var(--display-text-color);
+    font-size: var(--header-font-size);
+    font-family: 'Quicksand', sans-serif;
+}
+
+.char-clock {
+    font-size: 2rem;
+    position: relative;
+    bottom: 2px;
+}
+
+.clock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* position: absolute;
+    top: center;
+    left: center; */
+    transform: scale(1);
+    /* transform-origin: top left; */
+}
+
+.analogclock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: solid 10px var(--border-color);
+    border-radius: 100%;
+    background-color: var(--clock-background-color);
+}
+
+.pinpoint {
+    position: absolute;
+    z-index: 1;
+    height: 15px;
+    width: 15px;
+    background-color: var(--pinpoint-color);
+    border-radius: 100%;
+}
+
+.seconds-hand {
+    height: 3px;
+    width: 225px;
+    background-color: var(--seconds-hands-color);
+    position: absolute;
+    right: 50%;
+    transform: rotate(90deg);
+    transform-origin: right;
+    
+}
+
+.minutes-hand {
+    height: 8px;
+    width: 0px;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-right: 220px solid var(--minutes-hands-color);
+    position: absolute;
+    right: 50%;
+    transform-origin: right;
+    transform: rotate(90deg);
+    
+}
+
+.hours-hand {
+    height: 8px;
+    width: 0px;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-right: 190px solid var(--hours-hands-color);
+    position: absolute;
+    right: 50%;
+    transform-origin: right;
+    transform: rotate(90deg);
+}
+
+.hours-mark {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 100%;
+    background-color: var(--marks-color);
+}
+
+.minutes-mark {
+    position: absolute;
+    width: 2.5px;
+    height: 2.5px;
+    border-radius: 100%;
+    background-color: var(--marks-color);
+}
+
+.digiclock {
+    padding: 30px;
+}
+.display{
+    font-size: 3rem;
+    font-family: 'Comfortaa', cursive;
+    color: var(--display-text-color)
+}
+
+@media(max-width: 359px) {
+
+    .clock 
+    {
+        transform: scale(0.4);
+        transform-origin: center;
+    }
+
+}
+
+@media(min-width: 360px) and (max-width: 511px) {
+
+    .clock
+    {
+        transform: scale(0.5);
+        transform-origin: center;
+    }
+
+}
+
+@media(min-width: 512px) and (max-width: 768px) {
+
+    .clock
+    {
+        transform: scale(0.8);
+    }
+
+}
+
+footer {
+    padding: 10px;
+    font-size: 0.8rem;
+    color: var(--display-text-color);
+}
+
+footer a{
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--display-text-color);
+}
